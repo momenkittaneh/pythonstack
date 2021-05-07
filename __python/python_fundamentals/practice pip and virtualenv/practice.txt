@@ -1,0 +1,59 @@
+pip list : it shows the version of the frameworks installed on the virtual enviorment
+
+Package    Version
+---------- -------
+pip        20.2.3
+setuptools 49.2.1
+
+
+deactivate :This will deactivate your virtual environment
+
+
+pip install Django==2.2.4::	it will download the reqiurment files to install django framework on the virsual enviorment and then install the django
+			and it diffrent from activation and deactivation that shows framework on the virsual enviorment  when activated the information from 			virual enviroment and when 
+			deactivated it's shows only the pip3 version
+
+ ---------------------------------------------------------------------------------------------------------------------------------------
+Downloading Django-2.2.4-py3-none-any.whl (7.5 MB)
+     |████████████████████████████████| 7.5 MB 312 kB/s
+Collecting pytz
+  Downloading pytz-2021.1-py2.py3-none-any.whl (510 kB)
+     |████████████████████████████████| 510 kB 344 kB/s
+Collecting sqlparse
+  Downloading sqlparse-0.4.1-py3-none-any.whl (42 kB)
+     |████████████████████████████████| 42 kB 465 kB/s
+Installing collected packages: pytz, sqlparse, Django
+Successfully installed Django-2.2.4 pytz-2021.1 sqlparse-0.4.1
+WARNING: You are using pip version 20.2.3; however, version 21.1.1 is available.
+You should consider upgrading via the 'c:\users\mix-it\onedrive\desktop\codingdojoassigments\pythonstack\my_environments\py3env\scripts\python.exe -m pip install --upgrade pip' command.
+---------------------------------------------------------------------------------------------------------------------------------------
+pip freeze:: it shows the packages installed on virsual enviorment 
+Django==2.2.4
+pytz==2021.1
+sqlparse==0.4.1
+
+cd ~/Desktop
+pip freeze > requirements.txt::
+it saves the pip freeze items stored in pip freeze
+----------------------------
+pip uninstall Django:: it's ask you if you want to remove django framework
+
+(py3env) C:\Users\MIX-IT\OneDrive\Desktop\codingdojoassigments\pythonstack\my_environments>pip uninstall Django
+Found existing installation: Django 2.2.4
+Uninstalling Django-2.2.4:
+  Would remove:
+    c:\users\mix-it\onedrive\desktop\codingdojoassigments\pythonstack\my_environments\py3env\lib\site-packages\django-2.2.4.dist-info\*
+    c:\users\mix-it\onedrive\desktop\codingdojoassigments\pythonstack\my_environments\py3env\lib\site-packages\django\*
+    c:\users\mix-it\onedrive\desktop\codingdojoassigments\pythonstack\my_environments\py3env\scripts\django-admin.exe
+    c:\users\mix-it\onedrive\desktop\codingdojoassigments\pythonstack\my_environments\py3env\scripts\django-admin.py
+Proceed (y/n)?
+Your response ('') was not one of the expected responses: y, n
+Proceed (y/n)?
+Your response ('') was not one of the expected responses: y, n
+Proceed (y/n)?
+------------------------------------
+pip show Django
+
+it shows the version of django and summery of it
+and it auther information and license and location
+but if django not installed it shows there is no django installed
