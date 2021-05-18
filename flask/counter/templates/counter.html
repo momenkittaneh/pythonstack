@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		counter
+	</title>
+</head>
+<body style="margin: 10%;">
+	<p style="text-align: center;font-size: 35px;">
+		Vivits: {{c}}
+	</p>
+	<div style="display: flex;justify-content: space-between;">
+	<form method="post" action="/">
+			
+		<input type="submit" value="rafresh" style="">
+	</form>
+	<form method="post" action="/delete">
+		
+			<input type="submit" value="clear">
+
+	</form>
+	<form method="post" action="/plus">
+			
+			<input type="submit" value="plus2">
+
+	</form>
+	</div>
+	<form method="post" action="/acc" style="position: absolute;left:40%;top: 40%;">
+		<input type="number" name="var">
+		<input type="submit" value="acc">
+	</form>
+	
+</body>
+</html>
