@@ -1,0 +1,59 @@
+(djangoPy3Env) C:\Users\black\OneDrive\Desktop\python virual enviromnet\dojo_ninja_proj>python manage.py shell
+>>> from dojo_ninjas_app.models import *
+>>> dojo.objects.create(name="dojo",city="tulkarem",state="westbank")
+<dojo: dojo object (1)>
+>>> dojo.objects.create(name="dojo2",city="nablus",state="westbank")
+<dojo: dojo object (2)>
+>>> dojo.objects.create(name="dojo3",city="jenin",state="westbank")
+<dojo: dojo object (3)>
+>>> do = dojo.objects.get(id=1)
+>>> do.delete()
+(1, {'dojo_ninja_app.ninja': 0, 'dojo_ninja_app.dojo': 1})
+>>> do2 = dojo.objects.get(id=2)
+>>> do2.delete()
+(1, {'dojo_ninja_app.ninja': 0, 'dojo_ninja_app.dojo': 1})
+>>> do3 = dojo.objects.get(id=3)
+>>> do3.delete()
+(1, {'dojo_ninja_app.ninja': 0, 'dojo_ninja_app.dojo': 1})
+>>> dojo.objects.create(name="dojo4",city="ramallah",state="westbank")
+<dojo: dojo object (4)>
+>>> dojo.objects.create(name="dojo5",city="bethlahem",state="westbank")
+<dojo: dojo object (5)>
+>>> dojo.objects.create(name="dojo6",city="hebron",state="westbank")
+<dojo: dojo object (6)>
+>>> doj= dojo.objects.get(id=4)
+>>> ninja.objects.create(first_name="hanzo",last_name="ono",dojo=dojo)
+<ninja: ninja object (1)>
+>>> ninja.objects.create(first_name="naruto",last_name="uzomaki",dojo=dojo)
+<ninja: ninja object (2)>
+>>> ninja.objects.create(first_name="MK",last_name="KM",dojo=dojo)
+<ninja: ninja object (3)>
+>>> doj2=dojo.objects.get(id=5)
+>>> doj3=dojo.objects.get(id=6)
+>>> ninja.objects.create(first_name="sasuke",last_name="ut",dojo=doj2)
+<ninja: ninja object (4)>
+>>> ninja.objects.create(first_name="sakura",last_name="ut",dojo=doj2)
+<ninja: ninja object (5)>
+>>> ninja.objects.create(first_name="neji",last_name="ut",dojo=doj2)
+<ninja: ninja object (6)>
+>>> ninja.objects.create(first_name="shaki",last_name="sk",dojo=doj3)
+<ninja: ninja object (7)>
+>>> ninja.objects.create(first_name="",last_name="sk",dojo=doj3)
+<ninja: ninja object (8)>
+>>> ninja.objects.create(first_name="null",last_name="",dojo=doj3)
+<ninja: ninja object (9)>
+>>> do = dojo.objects.get(id=4)>>> ne = ninjas.objects.filter(dojo = do)
+>>> ne.all()
+<QuerySet [<ninjas: ninjas object (1)>, <ninjas: ninjas object (2)>, <ninjas: ninjas object (3)>]>
+
+
+de = dojo.objects.last()
+ni=ninjas.objects.filter(dojo=de)
+ni.all()
+<QuerySet [<ninjas: ninjas object (7)>, <ninjas: ninjas object (8)>, <ninjas: ninjas object (9)>]>
+
+>>> dojo.objects.create(name= 'dojonew',city='newcity',state='neptune')
+<dojo: dojo object (7)>
+>>> dojo.objects.create(name= 'dojonew',city='newcity',state='neptune',desc="i'm alien dojo")
+<dojo: dojo object (8)>
+>>>
