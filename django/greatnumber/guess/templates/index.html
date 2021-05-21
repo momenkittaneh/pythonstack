@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to the Great Number Game</h1>
+    <h2>I am thinking of a number between 1 and 100</h2>
+    <h2>take a guess</h2>
+    <div style="">
+    {%if answer == 1%}
+    <div style="background: green;width: 300px;height: 300px;margin: 0 auto;">
+        <form action="del" method="post">
+            {% csrf_token %}
+            <h1 style="padding-top: 40% ; text-align: center;">you guess right</h1>
+            <input type="submit" style="margin-left: 40%;">
+        </form>
+    </div>
+    {%endif%}
+    {%if answer == 2%}
+    <div style="background: red;width: 300px;height: 300px;margin: 0 auto;">
+        <h1 style="padding-top: 40%; text-align: center;">the number is high</h1></div>
+    {%endif%}
+    {%if answer == 3%}
+    <div style="background: red;width: 300px;height: 300px;margin: 0 auto;">
+    <h1 style="padding-top: 40%; text-align: center;">the number is low</h1></div>
+    {%endif%}
+    <div style="width: 300px;height: 300px;margin: 0 auto;">
+    <form action="guess" method="post">
+        {% csrf_token %}
+        <input type="number" name="thenum" min="1" max="100" value="1" style="width: 300px;">
+        <input type="submit" style="width: 150px;">
+    </form>
+    </div></div>
+</body>
+</html>
