@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body>
+    <center><h1>All Shows</h1></center>
+    
+
+    <table class="table table-bordered border-primary" style="width: 50%; margin-left: 25%;">
+        <thead>
+            <td>ID</td>
+            <td>Title</td>
+            <td>Network</td>
+            <td>Release Date</td>
+            <td>Action</td>
+        </thead>
+        <tbody>
+            {%for deliver in sho %}
+            <td>{{deliver.id}}</td>
+            <td>{{deliver.title}}</td>
+            <td>{{deliver.network}}</td>
+            <td>{{deliver.release_date}}</td>
+            <td><a href="shows/{{deliver.id}}">Show</a>| <a href="shows/{{deliver.id}}/edit">Edit</a> | <a href="">delete</a> </td>
+        </tbody>
+        {%endfor%}
+
+    </table>
+    <a href="shows/new">Add a New Show</a>
+
+</body>
+</html>
+
+
+
+
