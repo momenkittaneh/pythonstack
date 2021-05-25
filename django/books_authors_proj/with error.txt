@@ -1,0 +1,85 @@
+>>> ba = book.objects.filter(title="c#")
+>>> ba.title="C#"
+>>> ao = authors.objects.get(id=4)
+>>> ao.first_name="Bill"
+>>> ao = authors.objects.get(id=1)
+>>> bo = book.objects.get(id=1)
+>>> bo2 = book.objects.get(id=1)
+>>> bo2 = book.objects.get(id=2)
+>>> bo3 = book.objects.get(id=3)
+>>> bo4 = book.objects.get(id=4)
+>>> bo5 = book.objects.get(id=5)
+>>> bo.bkat.add(ao)
+>>> bo2.bkat.add(ao)
+>>> ao2 = authors.objects.get(id=2)
+>>> bo.bkat.add(ao2)
+>>> bo2.bkat.add(ao2)
+>>> bo3.bkat.add(ao2)
+>>> ao2 = authors.objects.get(id=3)
+>>>  bo.bkat.add(ao2)
+  File "<console>", line 1
+    bo.bkat.add(ao2)
+IndentationError: unexpected indent
+>>> bo.bkat.add(ao2)
+>>> bo2.bkat.add(ao2)
+>>> bo3.bkat.add(ao2)
+>>> bo4.bkat.add(ao2)
+>>> ---------------------
+  File "<console>", line 1
+    ---------------------
+                         ^
+SyntaxError: invalid syntax
+>>> ao2 = authors.objects.get(id=4)
+>>> bo.bkat.add(ao2)
+>>> bo2.bkat.add(ao2)
+>>> bo3.bkat.add(ao2)
+>>> bo4.bkat.add(ao2)
+>>> bo5.bkat.add(ao2)
+>>> bo3.all
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'book' object has no attribute 'all'
+>>> bo3.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'book' object has no attribute 'all'
+>>> bo3.objects.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\black\OneDrive\Desktop\python virual enviromnet\djangoPy3Env\lib\site-packages\django\db\models\manager.py", line 176, in __get__
+    raise AttributeError("Manager isn't accessible via %s instances" % cls.__name__)
+AttributeError: Manager isn't accessible via book instances
+>>> bo3.authors.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'book' object has no attribute 'authors'
+>>> b3.bkat.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'b3' is not defined
+>>> bo3.bkat.all()
+<QuerySet [<authors: authors object (2)>, <authors: authors object (3)>, <authors: authors object (4)>]>
+>>> bo3.bkat.all().value()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'QuerySet' object has no attribute 'value'
+>>> bo3.bkat.all().values()
+<QuerySet [{'id': 2, 'first_name': 'emily', 'last_name': 'dickinson', 'notes': 'notes', 'created_at': datetime.datetime(2021, 5, 24, 13, 11, 51, 856738, tzinfo=<UTC>), 'updated_at': datetime.datetime(2021, 5, 24, 13, 11, 51, 856738, tzinfo=<UTC>)}, {'id': 3, 'first_name': 'fyodor', 'last_name': 'dostoevsky', 'notes': 'notes', 'created_at': datetime.datetime(2021, 5, 24, 13, 12, 14, 113126, tzinfo=<UTC>), 'updated_at': datetime.datetime(2021, 5, 24, 13, 12, 14, 113126, tzinfo=<UTC>)}, {'id': 4, 'first_name': 'william', 'last_name': 'shakespeare', 'notes': 'notes', 'created_at': datetime.datetime(2021, 5, 24, 13, 12, 28, 966411, tzinfo=<UTC>), 'updated_at': datetime.datetime(2021, 5, 24, 13, 12, 28, 966411, tzinfo=<UTC>)}]>
+>>> a1 = authers.objects.get(id=1)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'authers' is not defined
+>>> a1 = authors.objects.get(id=1)
+>>> bo3.bkat.remove(a1)
+>>> a5 = authors.objects.get(id=5)
+>>> bo2.bkat.add(a5)
+>>> a3 = authors.objects.get(id=3)
+>>> a3.books.all()
+<QuerySet [<book: book object (1)>, <book: book object (2)>, <book: book object (3)>, <book: book object (4)>]>
+>>> b5.bkat.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'b5' is not defined
+>>> bo5.bkat.all()
+<QuerySet [<authors: authors object (4)>]>
+>>>
