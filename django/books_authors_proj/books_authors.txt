@@ -1,0 +1,23 @@
+
+(djangoPy3Env) C:\Users\black\OneDrive\Desktop\python virual enviromnet\books_authors_proj>python manage.py shell
+Python 3.9.5 (tags/v3.9.5:0a7dcbd, May  3 2021, 17:27:52) [MSC v.1928 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from books_authors_app.models import *
+>>> c = book.objects.create(title="c#",desc="low level language")
+>>> java=book.objects.create(title="java",desc="high level language")
+>>> python=book.objects.create(title="python",desc="high level language")
+>>> php = book.objects.create(title="php",desc="low level language")
+>>> ruby= book.objects.create(title="ruby",desc="high-level language")
+>>> jane = authors.objects.create(first_name="jane",last_name="austen")
+>>> emily = authors.objects.create(first_name="emily",last_name="dickinson")
+>>> fyodor = authors.objects.create(first_name="fyodor",last_name="dostoevsky")
+>>> wil = authors.objects.create(first_name="william",last_name="shakespeare")
+>>> la = authors.objects.create(first_name="lau",last_name="tzu")
+
+>>> ba = book.objects.filter(title="c#")
+>>> ba.title="C#"
+>>ba.save()
+>>> ao = authors.objects.get(id=4)
+>>> ao.first_name="Bill"
+>>>ao.save()
