@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{bo.first_name}} {{bo.last_name}}</h1>
+    <p>id= {{bo.id}}</p>
+    <p>notes : {{bo.notes}}</p>
+
+    <h3>books</h3>
+        {%for i in bo.bkat.all%}
+        <li>{{i.title}}</li>
+        {%endfor%}
+    <form action="/joinauthor" method="POST">
+        {% csrf_token %}
+    <select name="selectauthor">
+        {%for x in au%}
+        <option name="x_id">{{x.title}}</option>
+        {%endfor%}
+    </select>
+    <input type="submit" value="add">
+    </form>
+
+</body>
+</html>
